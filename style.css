@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cinzel', serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+body{
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:url("DET1.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+}
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(to right,
+    rgba(0,0,0,.72),
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.15));
+
+}
+
+.menu{
+
+    position:absolute;
+
+    left:7%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    z-index:5;
+
+}
+
+.title{
+
+    font-size:82px;
+
+    line-height:78px;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 25px rgba(255,255,255,.15),
+    0 0 50px rgba(0,0,0,.8);
+
+    margin-bottom:15px;
+
+}
+
+.subtitle{
+
+    color:#d8d8d8;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+    letter-spacing:2px;
+
+}
+
+button{
+
+    display:block;
+
+    width:280px;
+
+    margin-bottom:18px;
+
+    padding:18px;
+
+    font-size:28px;
+
+    color:white;
+
+    background:rgba(20,20,20,.75);
+
+    border:2px solid #8d7251;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-family:'Cinzel', serif;
+
+    letter-spacing:2px;
+
+    box-shadow:
+    inset 0 0 12px rgba(255,255,255,.05),
+    0 0 15px rgba(0,0,0,.6);
+
+}
+
+button:hover{
+
+    background:#6f1111;
+
+    transform:translateX(12px);
+
+    border-color:#f2d19a;
+
+    box-shadow:
+    0 0 25px rgba(255,210,130,.4);
+
+}

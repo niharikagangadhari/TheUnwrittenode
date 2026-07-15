@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Unwritten Node</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+
+background:url("DET1.png");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:100vh;
+overflow:hidden;
+
+}
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.72);
+
+backdrop-filter:blur(6px);
+
+}
+
+#text{
+
+position:relative;
+z-index:2;
+
+...
+}
+
+.skip{
+
+position:relative;
+z-index:2;
+
+...
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="text"></div>
+
+<div class="skip">
+
+Press SPACE to Skip
+
+</div>
+
+<script>
+    const story = [
+
+"Some stories are remembered...",
+
+"Others were buried before they were ever told.",
+
+"Indira Institute of Medical Sciences has always celebrated its brightest students.",
+
+"But one name quietly disappeared from history.",
+
+"You are Arjun.",
+
+"A first-year medical student.",
+
+"And tonight...",
+
+"You begin asking questions no one wants answered."
+
+];
+
+let index = 0;
+
+const text = document.getElementById("text");
+
+function showStory(){
+
+    if(index < story.length){
+
+        text.style.animation="none";
+
+        void text.offsetWidth;
+
+        text.style.animation="fade 4s forwards";
+
+        text.innerHTML=story[index];
+
+        index++;
+
+        setTimeout(showStory,4000);
+
+    }
+
+    else{
+
+        window.location.href="room.html";
+
+    }
+
+}
+
+showStory();
+
+document.addEventListener("keydown",function(e){
+
+    if(e.code==="Space"){
+
+        window.location.href="room.html";
+
+    }
+
+});
+</script>
+
+</body>
+
+</html>ś

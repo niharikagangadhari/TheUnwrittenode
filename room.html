@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arjun's Room</title>
+
+<link rel="stylesheet" href="room.css">
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<h1 class="objective">
+Objective: Search the room for clues.
+</h1>
+
+<!-- Diary -->
+
+<div class="clue diary"
+onclick="openDiary()">
+📖
+</div>
+
+<!-- Hall of fame photo -->
+
+<div class="clue photo"
+onclick="openPhoto()">
+🖼️
+</div>
+
+<!-- Notebook -->
+
+<div class="clue note"
+onclick="openNote()">
+📄
+</div>
+
+<!-- Popup -->
+
+<div id="popup" class="popup">
+
+<div class="popup-content">
+
+<h2 id="title"></h2>
+
+<p id="message"></p>
+
+<button onclick="closePopup()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script>
+    let clues = 0;
+
+function collect(title, message) {
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("title").innerHTML = title;
+    document.getElementById("message").innerHTML = message;
+    clues++;
+
+    if (clues >= 3) {
+        setTimeout(() => {
+            window.location.href = "evidence.html";
+        }, 1500);
+    }
+}
+
+function openDiary() {
+    collect("Diary", "Page 37 has been torn out.");
+}
+
+function openPhoto() {
+    collect("Hall of Fame", "One student's face has been scratched out.");
+}
+
+function openNote() {
+    collect("Anonymous Note", "\"Truth hides behind recognition.\"");
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+
+</html>
