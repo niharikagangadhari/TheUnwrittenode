@@ -71,12 +71,6 @@ index.html
 
 in any modern web browser.
 
-Or visit the deployed version:
-
-```
-https://<your-github-username>.github.io/the-unwritten-ode/
-```
-
 ---
 
 ## 📌 Future Improvements
